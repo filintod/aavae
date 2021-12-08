@@ -490,7 +490,7 @@ if __name__ == "__main__":
 
     callbacks = [
         LearningRateMonitor(logging_interval="step"),
-        ModelCheckpoint(every_n_val_epochs=200, save_top_k=-1, save_last=True),
+        ModelCheckpoint(every_n_epochs=200, save_top_k=-1, save_last=True),
     ]
 
     if args.online_ft:
