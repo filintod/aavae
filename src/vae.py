@@ -504,7 +504,7 @@ if __name__ == "__main__":
     trainer = pl.Trainer(
         max_epochs=args.max_epochs,
         gpus=args.gpus,
-        distributed_backend="ddp" if args.gpus > 1 else None,
+        strategy="ddp" if args.gpus > 1 else None,
         precision=16 if args.fp16 else 32,
         callbacks=callbacks,
         resume_from_checkpoint=None if args.ckpt_path == '' else args.ckpt_path,
